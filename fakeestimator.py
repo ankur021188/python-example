@@ -1,0 +1,15 @@
+from sklearn.datasets import make_regression, make_classification
+from sklearn import dummy
+x,y = make_regression()
+fakeestimator = dummy.DummyRegressor()
+#fakeestimator = dummy.DummyRegressor(strategy="median")
+fakeestimator.fit(x,y)
+print(fakeestimator.predict(x)[:5])
+x,y = make_regression()
+fakeestimator = dummy.DummyRegressor(strategy="median")
+fakeestimator.fit(x,y)
+print(fakeestimator.predict(x)[:5])
+x,y = make_classification()
+fakeestimator = dummy.DummyRegressor(strategy="median")
+fakeestimator.fit(x,y)
+print(fakeestimator.predict(x)[:5])
